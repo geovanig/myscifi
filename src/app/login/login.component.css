@@ -1,0 +1,21 @@
+.fundo{
+    background-image: url("../../assets/images/login.jpg");
+    min-height: 657px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.corTitulo{
+    color: rgb(85, 40, 124);
+}
+
+.btn{
+    background-color: rgb(85, 40, 124);
+    color: whitesmoke;
+}
+
+.btn:hover{
+    background-color: rgba(75, 0, 146, 0.712);
+    font-weight: bold; 
+}

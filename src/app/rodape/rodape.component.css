@@ -1,3 +1,21 @@
-.corFundo{
-    background-color:rgba(51, 0, 61, 0.137);
+.corTitulo{
+    color: rgb(17, 78, 43);
+}
+
+.fa{
+   font-size: 4rem; 
+   padding-left: 2rem;
+   padding-right: 2rem;
+}
+
+.fa-github-alt:hover{
+    color: rgb(74, 23, 124);
+}
+
+.fa-linkedin:hover{
+    color: rgb(11, 62, 156);
+}
+
+.fa-lightbulb-o:hover{
+    color: rgb(43, 57, 82);
 }

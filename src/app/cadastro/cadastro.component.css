@@ -1,0 +1,29 @@
+.fundo{
+    background-image: url("../../assets/images/cadastro.jpg");
+    min-height: 657px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.corTitulo{
+    color: rgb(85, 40, 124);
+}
+
+.btn{
+    background-color: rgb(145, 43, 122);
+    color: whitesmoke;
+}
+.btn:hover{
+    background-color: rgba(146, 0, 68, 0.712);
+    font-weight: bold; 
+}
+
+.btnColor{
+    background-color: rgb(40, 124, 110);
+    color: whitesmoke;
+}
+.btnColor:hover{
+    background-color: rgba(0, 146, 90, 0.712);
+    font-weight: bold; 
+}
