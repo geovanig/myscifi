@@ -1,6 +1,6 @@
 .fundo{
     background-image: url("../../assets/images/login.jpg");
-    min-height: 657px;
+    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

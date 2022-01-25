@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
+import { LoginLeitor } from '../model/LoginLeitor';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +11,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  loginLeitor: LoginLeitor = new LoginLeitor;
 
-  ngOnInit(): void {
+  constructor(private auth: AuthService, private router: Router) { }
+
+  ngOnInit() {
+    window.scroll(0,0);
+  }
+
+  logar() {
+    this.auth.logar(this.loginLeitor).subscribe({
+      next: (resp: LoginLeitor)=>{
+      this.loginLeitor = resp
+
+      environment.token = this.loginLeitor.token
+      environment.nome = this.loginLeitor.nome
+      environment.foto = this.loginLeitor.foto
+      environment.id = this.loginLeitor.id
+
+      this.router.navigate(["/inicio"])
+    },
+    error: erro => {
+      if(erro.status == 401) {
+        alert("Email ou senha inválido.")
+      }
+    },
+    });
   }
 
 }

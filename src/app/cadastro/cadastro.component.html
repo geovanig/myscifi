@@ -13,33 +13,33 @@
 
                     <form>
                         <div class="form-floating mb-3">
-                            <input type="name" class="form-control" id="floatingInput"
+                            <input [(ngModel)]="leitor.nome"  type="text" name="nome" class="form-control" id="nome"
                                 placeholder="Digite o nome aqui....">
-                            <label for="floatingInput">Nome</label>
+                            <label for="nome">Nome</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">Email</label>
+                            <input [(ngModel)]="leitor.email" type="text" name="email" class="form-control" id="email" placeholder="name@example.com">
+                            <label for="email">Email</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="link" class="form-control" id="floatingInput"
+                            <input [(ngModel)]="leitor.foto" type="text" name="foto" class="form-control" id="foto"
                                 placeholder="Insira link da foto aqui...(opcional)">
-                            <label for="floatingInput">Foto de perfil</label>
+                            <label for="foto">Foto de perfil</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="floatingPassword"
+                            <input (input)="confirmaSenha($event)" type="password" class="form-control" id="senha"
                                 placeholder="Digite a senha aqui...">
-                            <label for="floatingPassword">Senha</label>
+                            <label for="senha">Senha</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="password" class="form-control" id="floatingPassword"
+                            <input [(ngModel)]="leitor.senha" type="password" name="confirmarSenha" class="form-control" id="confirmaSenha"
                                 placeholder="Digite a senha aqui...">
-                            <label for="floatingPassword">Confirmar senha</label>
+                            <label for="confirmaSenha">Confirmar senha</label>
                         </div>
 
                         <div class="form-group">
                             <label for="tipo">Tipo de usuário</label>
-                            <select class="form-control" name="tipo" id="tipo">
+                            <select (change)="tipoLeitor($event)" class="form-control" name="tipo" id="tipo">
                                 <option>Selecione um tipo de usuário</option>
                                 <option value="normal">Leitor</option>
                                 <option value="adm">Administrador</option>
@@ -50,7 +50,7 @@
 
                         <div class="d-flex justify-content-center mb-2">
                             <button class="btn text-uppercase mr-4 ml-4" routerLink="/logar">Voltar</button>
-                            <button class="btn btnColor text-uppercase mr-4 ml-4">Criar</button>
+                            <button (click)="cadastrar()" class="btn btnColor text-uppercase mr-4 ml-4">Criar</button>
                         </div>
 
                     </form>

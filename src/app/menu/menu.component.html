@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark corFundo">
     <div>
-        <img src="https://i.pinimg.com/originals/c9/7c/0a/c97c0a4e2ff6fcbe2df3e2bf58a3641e.jpg" alt="imagem perfil"
+        <img src="{{foto}}" alt="imagem perfil"
             class="img-fluid rounded-circle" width="50px" height="50px">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto d-flex align-items-center">
             <li class="nav-item pl-2">
-                <h4 class="m-0 corTitulo">Sub-Zero</h4>
+                <h4 class="m-0 corTitulo">{{nome}}</h4>
             </li>
             <li class="nav-item pl-2 pt-1">
                 <a class="link" href="">
@@ -19,7 +19,7 @@
             </li>
         </ul>
     </div>
-    <a href="">
+    <a (click)="sair()">
         <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Sair</button>
     </a>
 </nav>
