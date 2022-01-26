@@ -2,3 +2,24 @@
     background-color: rgba(17, 78, 43, 0.404);
     color: rgb(51, 0, 61);
 }
+
+.btn1{
+    color: rgb(220, 211, 228);
+    background-color: rgb(131, 0, 136);
+}
+.btn1:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgba(166, 0, 172, 0.897);
+    font-weight: bold;
+    
+}
+
+.btn2{
+    color: rgb(211, 228, 223);
+    background-color: rgb(0, 136, 79);   
+}
+.btn2:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgba(2, 179, 105, 0.89); 
+    font-weight: bold;
+}
