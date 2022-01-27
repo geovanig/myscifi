@@ -17,3 +17,28 @@
 .fundo{
     background: rgba(115, 0, 209, 0.123);
 }
+
+.btnEdit{
+    background-color: rgba(0, 112, 97, 0.959);
+    color: rgba(211, 181, 205, 0.904);
+    font-weight: bold;
+}
+.btnDelete{
+    background-color: rgba(114, 0, 91, 0.952);
+    color: rgba(173, 204, 200, 0.918);
+    font-weight: bold;
+}
+
+.btnEdit:hover{
+    background-color: rgb(22, 139, 124);
+    color: rgb(223, 203, 219);
+    font-weight: bold;
+    font-size: 1.04rem;
+}
+.btnDelete:hover{
+    background-color: rgb(141, 24, 118);
+    color: rgb(196, 218, 215);
+    font-weight: bold;
+    font-size: 1.04rem;
+}
+

@@ -13,11 +13,11 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   logar(loginLeitor: LoginLeitor): Observable<LoginLeitor> {
-    return this.http.post<LoginLeitor>("https://myscifi.herokuapp.com/leitores/logar", loginLeitor);
+    return this.http.post<LoginLeitor>("https://testegeovani.herokuapp.com/leitores/logar", loginLeitor);
   }
 
   cadastrar(leitor: Leitor): Observable<Leitor> {
-    return this.http.post<Leitor>("https://myscifi.herokuapp.com/leitores/cadastrar", leitor);
+    return this.http.post<Leitor>("https://testegeovani.herokuapp.com/leitores/cadastrar", leitor);
   }
 
   logado(){
