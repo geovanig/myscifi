@@ -1,6 +1,19 @@
 .btnStyle{
-
+    color: rgb(198, 182, 212);
+    background-color: rgba(0, 145, 108, 0.966);
+    font-weight: bold;
 }
 .btnStyle:hover{
+    color: rgb(223, 217, 233);
+    background-color: rgba(0, 163, 109, 0.911);
+    font-weight: bold;
+    font-size: 1.1rem
+}
 
+.texto{
+    color: rgb(0, 139, 95);
+}
+
+.fundo{
+    background: rgba(115, 0, 209, 0.123);
 }
