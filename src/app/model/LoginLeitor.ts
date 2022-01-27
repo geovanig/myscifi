@@ -1,4 +1,5 @@
 export class LoginLeitor {
+
     public id: number;
     public nome: string;
     public email: string;
@@ -7,4 +8,5 @@ export class LoginLeitor {
     public foto: string;
     public tipo: string;
     public postagem: string;
+    
 }
