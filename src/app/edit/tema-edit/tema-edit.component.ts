@@ -19,10 +19,10 @@ export class TemaEditComponent implements OnInit {
   ngOnInit() {
     if(environment.token == ""){
       alert("secção expirada, faça login.")
-      this.router.navigate(["/logar"]);
-      let id = this.route.snapshot.params['id'];
-      this.findByIdTema(id);
+      this.router.navigate(["/logar"]); 
     }
+    let id = this.route.snapshot.params["id"];
+    this.findByIdTema(id);
   }
 
   findByIdTema(id: number) {
