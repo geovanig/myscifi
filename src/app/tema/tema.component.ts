@@ -42,4 +42,6 @@ export class TemaComponent implements OnInit {
     })
   }
 
+  
+
 }
