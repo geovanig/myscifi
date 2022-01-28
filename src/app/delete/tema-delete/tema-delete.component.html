@@ -1,1 +1,32 @@
-<p>tema-delete works!</p>
+<div class="container mt-4 mb-4">
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h1 class="text-center">Deletar</h1>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+       <div class="col-md-12">
+           <h4 class="text-center">
+               Ao deletar uma categoria, todas as postagens relacionadas a ela, serão apagadas.
+           </h4>
+       </div> 
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <h6 class="text-center">
+                {{tema.descricao}}
+            </h6>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center">
+            <button class="btn mr-1 ml-1" routerLink="/tema">Cancelar</button>
+            <button class="btn mr-1 ml-1" (click)="apagar()">Confirmar</button>
+        </div>
+    </div>
+
+</div>
