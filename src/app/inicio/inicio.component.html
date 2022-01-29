@@ -52,17 +52,57 @@
     </ul>
 
     <div class="tab-content" id="myTabContent">
+
         <div class="tab-pane fade show active" id="minhaPostagens" role="tabpanel" aria-labelledby="minhaPostagens-tab">
-            minhaPostagens</div>
-        <div class="tab-pane fade" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
-            todasPostagens
-            todasPostagens
-            todasPostagens
-            todasPostagens
-            todasPostagens
+
+            <div class="card-columns d-flex align-items-center" *ngFor="let item of usuario.postagem">
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h4 class="card-title">{{item.titulo}}</h4>
+                        <p class="card-text"><small class="text-muted">{{item.tema.descricao}}</small></p>
+                        <p class="card-text">{{item.texto}}</p>
+                        <p class="card-text"><small class="text-muted">{{item.date | date: "dd/MM/yyyy"}} - {{item.date
+                                | date: "HH:mm"}}</small></p>
+                        <hr class="mt-4">
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+        <div class="tab-pane fade" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
+
+            <div class="card-columns d-flex align-items-center" *ngFor="let item of listaPostagens">
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h4 class="card-title">{{item.titulo}}</h4>
+                        <p class="card-text"><small class="text-muted">{{item.tema.descricao}}</small></p>
+                        <p class="card-text">{{item.texto}}</p>
+                        <p class="card-text"><small class="text-muted">{{item.date | date: "dd/MM/yyyy"}} - {{item.date
+                                | date: "HH:mm"}}</small></p>
+                        <p class="card-text"><small class="text-muted">{{item.leitor.nome}}</small></p>
+                        <hr class="mt-4">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
         <div class="tab-pane fade" id="postagensCategoria" role="tabpanel" aria-labelledby="postagensCategoria-tab">
-            postagensCategoria</div>
+           
+            <div class="card-columns" *ngFor="let item of listaTemas">
+                <div class="card text-center" *ngFor="let item of tema.postagem">
+                    <div class="card-body">
+                        <h4 class="card-title">{{item.titulo}}</h4>
+                        <p class="card-text">{{item.texto}}</p>
+                        <p class="card-text"><small class="text-muted">{{item.date | date: "dd/MM/yyyy"}} - {{item.date
+                                | date: "HH:mm"}}</small></p>
+                        <p class="card-text"><small class="text-muted">{{item.leitor.nome}}</small></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
 </div>
@@ -78,7 +118,8 @@
 
                 <div class="form-group">
                     <label for="titulo">Título</label>
-                    <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo" placeholder="Digite o título da postagem...">
+                    <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo"
+                        placeholder="Digite o título da postagem...">
                 </div>
 
                 <div class="form-group">
@@ -93,7 +134,8 @@
 
                 <div class="form-group">
                     <label for="titulo">Texto</label>
-                    <textarea [(ngModel)]="postagem.texto" class="form-control" name="texto" id="texto" rows="8"></textarea>
+                    <textarea [(ngModel)]="postagem.texto" class="form-control" name="texto" id="texto"
+                        rows="8"></textarea>
                 </div>
 
             </div>

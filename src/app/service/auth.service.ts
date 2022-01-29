@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
@@ -12,12 +12,22 @@ export class AuthService {
   
   constructor(private http: HttpClient) {}
 
+  token = {headers: new HttpHeaders().set("Authorization", environment.token),}
+
+  refreshToken() {
+    this.token={headers: new HttpHeaders().set("Authorization", environment.token),};
+  }
+
   logar(loginLeitor: LoginLeitor): Observable<LoginLeitor> {
     return this.http.post<LoginLeitor>("https://testegeovani.herokuapp.com/leitores/logar", loginLeitor);
   }
 
   cadastrar(leitor: Leitor): Observable<Leitor> {
     return this.http.post<Leitor>("https://testegeovani.herokuapp.com/leitores/cadastrar", leitor);
+  }
+
+  getByIdLeitor(id: number): Observable<Leitor>{
+    return this.http.get<Leitor>(`https://testegeovani.herokuapp.com/leitores/${id}`, this.token);
   }
 
   logado(){
