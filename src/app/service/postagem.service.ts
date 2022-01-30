@@ -17,16 +17,21 @@ export class PostagemService {
     return this.http.get<Postagem[]>("https://testegeovani.herokuapp.com/postagens", this.token);
   }
 
+  getByIdPostagem(id: number): Observable<Postagem> {
+    return this.http.get<Postagem>(`https://testegeovani.herokuapp.com/postagens/${id}`, this.token)
+  }
+
   postPostagem(postagem: Postagem): Observable<Postagem> {
     return this.http.post<Postagem>("https://testegeovani.herokuapp.com/postagens", postagem, this.token);
   }
 
- /*  putTema(tema: Tema): Observable<Tema> {
-    return this.http.put<Tema>("https://testegeovani.herokuapp.com/postagens", tema, this.token);
+  putPostagem(postagem: Postagem): Observable<Postagem> {
+    return this.http.put<Postagem>("https://testegeovani.herokuapp.com/postagens", postagem, this.token);
   }
 
-  deleteTema(id: number) {
+  
+  deletePostagem(id: number) {
     return this.http.delete(`https://testegeovani.herokuapp.com/postagens/${id}`, this.token);
-  } */
+  }
 
 }
