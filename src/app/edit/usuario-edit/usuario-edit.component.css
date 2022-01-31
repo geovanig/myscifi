@@ -1,0 +1,21 @@
+.corTitulo{
+    color: rgb(85, 40, 124);
+}
+
+.btn{
+    background-color: rgb(165, 42, 99);
+    color: whitesmoke;
+}
+.btn:hover{
+    background-color: rgba(196, 0, 91, 0.712);
+    font-weight: bold; 
+}
+
+.btnColor{
+    background-color: rgb(45, 158, 134);
+    color: whitesmoke;
+}
+.btnColor:hover{
+    background-color: rgba(0, 173, 107, 0.712);
+    font-weight: bold; 
+}
