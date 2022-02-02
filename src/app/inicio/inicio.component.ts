@@ -24,6 +24,8 @@ export class InicioComponent implements OnInit {
   idTema: number;
   usuario: Leitor = new Leitor();
   idLeitor = environment.id;
+  key = "date";
+  reverse = true;
 
   constructor(
     private router: Router,

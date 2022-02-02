@@ -55,7 +55,8 @@
 
         <div class="tab-pane fade show active" id="minhaPostagens" role="tabpanel" aria-labelledby="minhaPostagens-tab">
 
-            <div class="card-columns d-flex align-items-center" *ngFor="let item of usuario.postagem">
+            <div class="card-columns d-flex align-items-center"
+            *ngFor="let item of usuario.postagem | orderBy : key : reverse">
                 <div class="col-md-8">
                     <div class="card-body">
                         <h4 class="card-title">{{item.titulo}}</h4>
@@ -76,7 +77,8 @@
 
         <div class="tab-pane fade" id="todasPostagens" role="tabpanel" aria-labelledby="todasPostagens-tab">
 
-            <div class="card-columns d-flex align-items-center" *ngFor="let item of listaPostagens">
+            <div class="card-columns d-flex align-items-center"
+            *ngFor="let item of listaPostagens | orderBy : key : reverse">
                 <div class="col-md-8">
                     <div class="card-body">
                         <h4 class="card-title">{{item.titulo}}</h4>
@@ -92,7 +94,7 @@
 
         </div>
 
-        <div class="tab-pane fade" id="postagensCategoria" role="tabpanel" aria-labelledby="postagensCategoria-tab">
+        <div class="tab-pane fade" id="postagensCategoria" role="tabpanel" aria-labelledby="nav-postagensCategoria-tab">
 
             <div class="card-columns" *ngFor='let item of listaTemas'>
                 <div class="card text-center" *ngFor='let item of tema.postagem'>
