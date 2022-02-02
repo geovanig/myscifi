@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Leitor } from '../model/Leitor';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
@@ -28,7 +29,8 @@ export class InicioComponent implements OnInit {
     private router: Router,
     private postagemService: PostagemService,
     private temaService: TemaService,
-    private authService: AuthService
+    private authService: AuthService,
+    private alertas: AlertasService
     ) {}
 
   ngOnInit() {
@@ -40,7 +42,7 @@ export class InicioComponent implements OnInit {
     this.authService.refreshToken();
     this.getAllTemas();
     this.getAllPostagens();
-    this.findByIdLeitor()
+    this.findByIdLeitor();
   }
 
   getAllTemas() {
@@ -72,6 +74,7 @@ export class InicioComponent implements OnInit {
     this.postagem.leitor = this.usuario;
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem)=>{
       this.postagem = resp
+      this.alertas.showAlertSuccess("Postagem realizada!")
       this.postagem = new Postagem()
       this.getAllPostagens();
     })
