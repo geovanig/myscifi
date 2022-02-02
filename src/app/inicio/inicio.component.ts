@@ -26,6 +26,8 @@ export class InicioComponent implements OnInit {
   idLeitor = environment.id;
   key = "date";
   reverse = true;
+  tituloPost: string;
+  descricaoTema: string;
 
   constructor(
     private router: Router,
@@ -44,7 +46,6 @@ export class InicioComponent implements OnInit {
     this.authService.refreshToken();
     this.getAllTemas();
     this.getAllPostagens();
-    this.findByIdLeitor();
   }
 
   getAllTemas() {
@@ -67,6 +68,26 @@ export class InicioComponent implements OnInit {
 
   findByIdLeitor(){
     this.authService.getByIdLeitor(this.idLeitor).subscribe((resp: Leitor)=>{this.usuario=resp});
+  }
+
+  findByTituloPostagem() {
+    if(this.tituloPost == "") {
+      this.getAllPostagens;
+    }else {
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[])=>{
+        this.listaPostagens = resp
+      });
+    }
+  }
+
+  findByDescricao() {
+    if(this.descricaoTema == "") {
+      this.getAllTemas();
+    }else {
+      this.temaService.getByNomeTema(this.descricaoTema).subscribe((resp: Tema[])=>{
+        this.listaTemas = resp
+      });
+    }
   }
 
   publicar(){
