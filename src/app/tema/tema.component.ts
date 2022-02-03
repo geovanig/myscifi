@@ -23,6 +23,11 @@ export class TemaComponent implements OnInit {
       this.router.navigate(["/logar"]);
     }
 
+    if(environment.tipo != "adm"){
+      alert("Sua conta não possui permissão para isso!")
+      this.router.navigate(["/inicio"])
+    }
+
     this.findAllTemas();
 
   }

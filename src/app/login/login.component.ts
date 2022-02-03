@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   }
 
   logar() {
+    
     this.auth.logar(this.loginLeitor).subscribe({
       next: (resp: LoginLeitor)=>{
       this.loginLeitor = resp
@@ -28,14 +29,13 @@ export class LoginComponent implements OnInit {
       environment.nome = this.loginLeitor.nome
       environment.foto = this.loginLeitor.foto
       environment.id = this.loginLeitor.id
-
-      console.log(environment)
+      environment.tipo = this.loginLeitor.tipo
 
       this.router.navigate(["/inicio"])
     },
     error: erro => {
-      if(erro.status == 401) {
-        alert("Email ou senha inválido.")
+      if(erro.status == 401 || erro.status == 500) {
+        alert("Email ou senha inválidos ou inexistentes.")
       }
     },
     });
