@@ -19,15 +19,15 @@ export class AuthService {
   }
 
   logar(loginLeitor: LoginLeitor): Observable<LoginLeitor> {
-    return this.http.post<LoginLeitor>("https://testegeovani.herokuapp.com/leitores/logar", loginLeitor);
+    return this.http.post<LoginLeitor>("https://myscifi.herokuapp.com/leitores/logar", loginLeitor);
   }
 
   cadastrar(leitor: Leitor): Observable<Leitor> {
-    return this.http.post<Leitor>("https://testegeovani.herokuapp.com/leitores/cadastrar", leitor);
+    return this.http.post<Leitor>("https://myscifi.herokuapp.com/leitores/cadastrar", leitor);
   }
 
   getByIdLeitor(id: number): Observable<Leitor>{
-    return this.http.get<Leitor>(`https://testegeovani.herokuapp.com/leitores/${id}`, this.token);
+    return this.http.get<Leitor>(`https://myscifi.herokuapp.com/leitores/${id}`, this.token);
   }
 
   logado(){
